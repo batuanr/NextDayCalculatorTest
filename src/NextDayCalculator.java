@@ -3,6 +3,20 @@ public class NextDayCalculator {
     public static final String CONCATENATION = "/";
 
     public static String getNextDay (int day, int month, int year) {
+        int lastOfMonth = getLastOfMonth(month);
+        if (day == lastOfMonth) {
+            int startOfMonth = 1;
+            day = startOfMonth;
+            month++;
+        }
+        else {
+
+            day++;
+        }
+        return day + CONCATENATION + month + CONCATENATION + year;
+    }
+
+    private static int getLastOfMonth(int month) {
         int lastOfMonth = 0;
         switch (month) {
             case 1:
@@ -22,16 +36,7 @@ public class NextDayCalculator {
                 lastOfMonth = 30;
                 break;
         }
-        if (day == lastOfMonth) {
-            int startOfMonth = 1;
-            day = startOfMonth;
-            month++;
-        }
-        else {
-
-            day++;
-        }
-        return day + CONCATENATION + month + CONCATENATION + year;
+        return lastOfMonth;
     }
 }
 
