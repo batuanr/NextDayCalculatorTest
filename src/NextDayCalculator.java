@@ -47,9 +47,12 @@ public class NextDayCalculator {
 
     private static boolean checkLeapYear(int year) {
         boolean isLeapYear = false;
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if(year % 400 == 0) {
+        boolean isDivisibleBy4 = year % 4 == 0;
+        boolean isDivisibleBy100 = year % 100 == 0;
+        boolean isDivisibleBy400 = year % 400 == 0;
+        if (isDivisibleBy4) {
+            if (isDivisibleBy100) {
+                if(isDivisibleBy400) {
                    isLeapYear = true; 
                 }
             }
