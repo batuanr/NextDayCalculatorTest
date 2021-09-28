@@ -4,15 +4,24 @@ public class NextDayCalculator {
 
     public static String getNextDay (int day, int month, int year) {
         int lastOfMonth = getLastOfMonth(month, year);
-        if (day == lastOfMonth) {
-            int startOfMonth = 1;
-            day = startOfMonth;
-            month++;
+        int lastOfYear = 12;
+        if (day == lastOfMonth && month == lastOfYear) {
+            day = 1;
+            month = 1;
+            year ++;
         }
         else {
+            if (day == lastOfMonth) {
+                int startOfMonth = 1;
+                day = startOfMonth;
+                month++;
+            }
+            else {
 
-            day++;
+                day++;
+            }
         }
+
         return day + CONCATENATION + month + CONCATENATION + year;
     }
 
