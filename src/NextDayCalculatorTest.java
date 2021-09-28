@@ -55,4 +55,14 @@ class NextDayCalculatorTest {
         String result = NextDayCalculator.getNextDay(dayTest, monthTest, yearTest);
         assertEquals(expected, result);
     }
+    @Test
+    @DisplayName("case 31/12/2018")
+    void testDay31Month12Year2018() {
+        int dayTest = 31;
+        int monthTest = 12;
+        int yearTest = 2018;
+        String expected = "1/1/2019";
+        String result = NextDayCalculator.getNextDay(dayTest, monthTest, yearTest);
+        assertEquals(expected, result);
+    }
 }
